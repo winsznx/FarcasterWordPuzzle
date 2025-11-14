@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { useWriteContract, useWaitForTransactionReceipt } from 'wagmi';
+import { useWriteContract, useWaitForTransactionReceipt, useAccount } from 'wagmi';
 import { parseEther } from 'viem';
 import { GAME_CONTRACT_ADDRESS, GAME_ABI } from '@/lib/contracts';
 import { RewardClaim } from './RewardClaim';
@@ -44,6 +44,7 @@ export function GamePlay({ level, onBack }: GamePlayProps) {
   const [rewards, setRewards] = useState<any>(null);
   const [fid, setFid] = useState<number | null>(null);
 
+  const { address } = useAccount();
   const { writeContract, data: hash, isPending } = useWriteContract();
   const { isSuccess: playTxSuccess } = useWaitForTransactionReceipt({ hash });
 
@@ -68,8 +69,17 @@ export function GamePlay({ level, onBack }: GamePlayProps) {
       // Start game after payment confirmed
       loadNewPuzzle();
       setGameState('playing');
+
+      // Track play stat
+      if (address) {
+        fetch('/api/stats', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ address, action: 'play', level }),
+        }).catch(err => console.error('Stats tracking error:', err));
+      }
     }
-  }, [playTxSuccess, gameState]);
+  }, [playTxSuccess, gameState, address, level]);
 
   const loadNewPuzzle = () => {
     const puzzles = level === 1 ? LEVEL_1_PUZZLES : LEVEL_2_PUZZLES;
@@ -93,6 +103,15 @@ export function GamePlay({ level, onBack }: GamePlayProps) {
 
     if (userAnswer.toUpperCase() === puzzle.word) {
       setGameState('won');
+
+      // Track win stat
+      if (address) {
+        fetch('/api/stats', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ address, action: 'win', level }),
+        }).catch(err => console.error('Stats tracking error:', err));
+      }
 
       // Call backend to get signature
       try {

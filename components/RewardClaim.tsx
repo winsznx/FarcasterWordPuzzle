@@ -1,7 +1,7 @@
 'use client';
 
-import { useState } from 'react';
-import { useWriteContract, useWaitForTransactionReceipt, useSwitchChain } from 'wagmi';
+import { useState, useEffect } from 'react';
+import { useWriteContract, useWaitForTransactionReceipt, useSwitchChain, useAccount } from 'wagmi';
 import { base, celo } from 'wagmi/chains';
 import { BASE_VAULT_CONTRACT_ADDRESS, CELO_VAULT_CONTRACT_ADDRESS, VAULT_ABI } from '@/lib/contracts';
 
@@ -26,12 +26,24 @@ interface RewardClaimProps {
 
 export function RewardClaim({ signature, onClose, onShare }: RewardClaimProps) {
   const [claimStep, setClaimStep] = useState<'base' | 'celo' | 'complete'>('base');
+  const { address } = useAccount();
   const { switchChain } = useSwitchChain();
 
   const { writeContract, data: hash, isPending } = useWriteContract();
   const { isLoading: isConfirming, isSuccess } = useWaitForTransactionReceipt({
     hash,
   });
+
+  // Track claim when transaction succeeds
+  useEffect(() => {
+    if (isSuccess && claimStep === 'complete' && address) {
+      fetch('/api/stats', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ address, action: 'claim' }),
+      }).catch(err => console.error('Stats tracking error:', err));
+    }
+  }, [isSuccess, claimStep, address]);
 
   const handleClaimBase = async () => {
     // Switch to Base
