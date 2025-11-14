@@ -1,0 +1,31 @@
+{
+  "accountAssociation": {
+    "header": "",
+    "payload": "",
+    "signature": ""
+  },
+  "miniapp": {
+    "version": "1",
+    "name": "Word Puzzle Game",
+    "iconUrl": "https://your-domain.com/icon.png",
+    "homeUrl": "https://your-domain.com",
+    "imageUrl": "https://your-domain.com/og-image.png",
+    "buttonTitle": "Play Puzzle",
+    "splashImageUrl": "https://your-domain.com/icon.png",
+    "splashBackgroundColor": "#f5f5dc",
+    "subtitle": "NFT-gated word puzzles",
+    "description": "Solve word puzzles and earn crypto rewards on Celo blockchain. Mint NFTs to unlock levels and claim multi-token rewards.",
+    "primaryCategory": "games",
+    "tags": ["puzzle", "word-game", "crypto", "rewards", "nft"],
+    "heroImageUrl": "https://your-domain.com/hero.png",
+    "tagline": "Puzzle, Win, Earn Crypto!",
+    "ogTitle": "Word Puzzle Game - Earn Crypto",
+    "ogDescription": "Solve word puzzles and earn crypto rewards on Celo blockchain",
+    "ogImageUrl": "https://your-domain.com/og-image.png",
+    "requiredChains": ["eip155:8453", "eip155:42220"],
+    "requiredCapabilities": [
+      "wallet.getEthereumProvider",
+      "actions.ready"
+    ]
+  }
+}
