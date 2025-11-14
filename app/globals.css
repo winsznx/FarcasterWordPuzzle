@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --brand-orange: #e35336;
+  --brand-cream: #f5f5dc;
+  --brand-tan: #f4a460;
+  --brand-brown: #a0522d;
+}
+
+body {
+  @apply bg-brand-cream text-gray-900;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-brand-orange hover:bg-brand-brown text-white font-bold py-3 px-6 rounded-lg transition-colors duration-200;
+  }
+
+  .btn-secondary {
+    @apply bg-brand-tan hover:bg-brand-orange text-white font-bold py-3 px-6 rounded-lg transition-colors duration-200;
+  }
+
+  .card {
+    @apply bg-white rounded-xl shadow-lg p-6 border-2 border-brand-tan;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3 border-2 border-brand-tan rounded-lg focus:outline-none focus:border-brand-orange transition-colors;
+  }
+}
