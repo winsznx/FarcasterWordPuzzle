@@ -31,7 +31,7 @@ export default function Home() {
       <header className="bg-white shadow-md border-b-4 border-brand-orange">
         <div className="max-w-7xl mx-auto px-4 py-6">
           <div className="flex justify-between items-center mb-4">
-            <div>
+            <div className="flex-1 text-center">
               <h1 className="text-3xl font-bold text-brand-orange">
                 Word Puzzle Game
               </h1>
@@ -39,7 +39,9 @@ export default function Home() {
                 NFT-Gated Puzzle Challenge
               </p>
             </div>
-            <ConnectButton />
+            <div className="absolute right-4">
+              <ConnectButton />
+            </div>
           </div>
 
           {/* Navigation Links */}
