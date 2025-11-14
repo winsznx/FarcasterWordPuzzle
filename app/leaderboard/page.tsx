@@ -42,13 +42,16 @@ export default function LeaderboardPage() {
       // For now, we'll use sample FIDs - replace with actual game participants
       const sampleFids = [1, 2, 3, 602, 3621, 6806, 99, 194, 239];
 
+      console.log('Fetching leaderboard for FIDs:', sampleFids);
       const response = await axios.post('/api/talent/leaderboard', {
         fids: sampleFids,
       });
 
-      setLeaderboard(response.data.leaderboard);
+      console.log('Leaderboard response:', response.data);
+      setLeaderboard(response.data.leaderboard || []);
     } catch (error) {
       console.error('Error fetching leaderboard:', error);
+      setLeaderboard([]);
     } finally {
       setLoading(false);
     }

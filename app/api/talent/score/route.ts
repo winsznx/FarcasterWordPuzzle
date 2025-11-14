@@ -23,7 +23,9 @@ export async function GET(request: NextRequest) {
       );
     }
 
+    console.log('Fetching Talent score for FID:', fidNumber);
     const talentScore = await getTalentScoreByFID(fidNumber);
+    console.log('Talent score result:', talentScore);
 
     if (!talentScore) {
       // User doesn't have a Talent score - that's okay, they can still play

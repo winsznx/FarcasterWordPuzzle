@@ -44,10 +44,19 @@ export default function TalentPage() {
 
   const fetchTalentScore = async (userFid: number) => {
     try {
+      console.log('Fetching Talent score for FID:', userFid);
       const response = await axios.get(`/api/talent/score?fid=${userFid}`);
+      console.log('Talent API response:', response.data);
       setTalentData(response.data);
     } catch (error) {
       console.error('Error fetching Talent score:', error);
+      setTalentData({
+        fid: userFid,
+        score: 0,
+        hasScore: false,
+        bonusMultiplier: 1.0,
+        bonusDescription: 'Standard Rewards',
+      });
     } finally {
       setLoading(false);
     }
