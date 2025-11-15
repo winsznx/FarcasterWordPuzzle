@@ -9,10 +9,7 @@ export function FarcasterProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     const initFarcaster = async () => {
       try {
-        // Wait for the app to be fully loaded
-        await new Promise((resolve) => setTimeout(resolve, 500));
-
-        // Call ready to hide splash screen
+        // Call ready immediately to hide splash screen
         await sdk.actions.ready();
         setIsReady(true);
 
@@ -29,14 +26,7 @@ export function FarcasterProvider({ children }: { children: ReactNode }) {
   }, []);
 
   if (!isReady) {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-brand-cream">
-        <div className="text-center">
-          <div className="w-16 h-16 border-4 border-brand-orange border-t-transparent rounded-full animate-spin mx-auto mb-4" />
-          <p className="text-brand-brown font-medium">Loading game...</p>
-        </div>
-      </div>
-    );
+    return null; // Let splash screen show while initializing
   }
 
   return <>{children}</>;
