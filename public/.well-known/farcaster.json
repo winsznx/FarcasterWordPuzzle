@@ -4,7 +4,7 @@
     "payload": "eyJkb21haW4iOiJmYXJjYXN0ZXItd29yZC1wdXp6bGUudmVyY2VsLmFwcCJ9",
     "signature": "UG6GD7uYJL0ZZUxVZaXFbcMZSfGZEqaaVdXhf9isovcYT/nc+zHL9/v51JIKqlLAJrK1Q4TFV09UlNmLKtBYOxw="
   },
-  "miniapp": {
+  "frame": {
     "version": "1",
     "name": "Word Puzzle Game",
     "iconUrl": "https://farcaster-word-puzzle.vercel.app/icon.png",
