@@ -20,18 +20,205 @@ interface Puzzle {
 
 const LEVEL_1_PUZZLES: Puzzle[] = [
   { word: 'CRYPTO', clue: 'Digital currency', scrambled: 'TPYCRO' },
-  { word: 'BLOCKCHAIN', clue: 'Distributed ledger technology', scrambled: 'KCNIHCOLBA' },
-  { word: 'WALLET', clue: 'Where you store your coins', scrambled: 'LLAEWT' },
-  { word: 'TOKEN', clue: 'Digital asset on a blockchain', scrambled: 'NETOK' },
-  { word: 'SMART', clue: 'Type of self-executing contract', scrambled: 'TMARS' },
+  { word: 'WALLET', clue: 'Where you store coins', scrambled: 'LLAEWT' },
+  { word: 'TOKEN', clue: 'Digital asset', scrambled: 'NETOK' },
+  { word: 'SMART', clue: 'Contract type', scrambled: 'TMARS' },
+  { word: 'MINING', clue: 'Creating new blocks', scrambled: 'GINIMN' },
+  { word: 'CHAIN', clue: 'Linked blocks', scrambled: 'NAHCI' },
+  { word: 'LEDGER', clue: 'Transaction record', scrambled: 'REGDEL' },
+  { word: 'NODES', clue: 'Network computers', scrambled: 'SNEDO' },
+  { word: 'BLOCK', clue: 'Data container', scrambled: 'KOLBC' },
+  { word: 'PROOF', clue: 'Validation method', scrambled: 'FORPO' },
+  { word: 'HASH', clue: 'Cryptographic output', scrambled: 'SAHA' },
+  { word: 'PEERS', clue: 'Network participants', scrambled: 'SREEP' },
+  { word: 'FORK', clue: 'Chain split', scrambled: 'KORF' },
+  { word: 'GAS', clue: 'Transaction fee', scrambled: 'SGA' },
+  { word: 'SWAP', clue: 'Token exchange', scrambled: 'PAWS' },
+  { word: 'MINT', clue: 'Create tokens', scrambled: 'TNIM' },
+  { word: 'BURN', clue: 'Destroy tokens', scrambled: 'NRUB' },
+  { word: 'KEYS', clue: 'Access credentials', scrambled: 'SYKE' },
+  { word: 'SEED', clue: 'Wallet backup phrase', scrambled: 'DEES' },
+  { word: 'SHARD', clue: 'Blockchain partition', scrambled: 'DRASH' },
+  { word: 'STAKE', clue: 'Lock tokens', scrambled: 'KETAS' },
+  { word: 'ORACLE', clue: 'External data source', scrambled: 'ERALCO' },
+  { word: 'BRIDGE', clue: 'Cross-chain connector', scrambled: 'EGDIRB' },
+  { word: 'WHALE', clue: 'Large holder', scrambled: 'LEHAW' },
+  { word: 'PUMP', clue: 'Price increase', scrambled: 'MPUP' },
+  { word: 'DUMP', clue: 'Price decrease', scrambled: 'MPUD' },
+  { word: 'BULL', clue: 'Market optimism', scrambled: 'LLUB' },
+  { word: 'BEAR', clue: 'Market pessimism', scrambled: 'RAEB' },
+  { word: 'MOON', clue: 'Price surge', scrambled: 'NOMO' },
+  { word: 'HODL', clue: 'Hold strategy', scrambled: 'LDOH' },
+  { word: 'FOMO', clue: 'Fear of missing out', scrambled: 'OMFO' },
+  { word: 'FUD', clue: 'Fear uncertainty doubt', scrambled: 'DUF' },
+  { word: 'FLASH', clue: 'Quick loan type', scrambled: 'HSALF' },
+  { word: 'POOL', clue: 'Liquidity collection', scrambled: 'LOOP' },
+  { word: 'FARM', clue: 'Yield generation', scrambled: 'MRAF' },
+  { word: 'VAULT', clue: 'Secured storage', scrambled: 'TLUAV' },
+  { word: 'REKT', clue: 'Total loss', scrambled: 'TKER' },
+  { word: 'GWEI', clue: 'Gas unit', scrambled: 'WEIG' },
+  { word: 'WEI', clue: 'Smallest ETH unit', scrambled: 'IEW' },
+  { word: 'ETHER', clue: 'Ethereum currency', scrambled: 'REHTE' },
+  { word: 'LAYER', clue: 'Scaling solution', scrambled: 'REYAL' },
+  { word: 'SIDECHAIN', clue: 'Parallel blockchain', scrambled: 'EDICHAINS' },
+  { word: 'MERKLE', clue: 'Tree structure', scrambled: 'ELRKME' },
+  { word: 'NONCE', clue: 'Number used once', scrambled: 'ECNON' },
+  { word: 'SLIPPAGE', clue: 'Price difference', scrambled: 'EGAPPILS' },
+  { word: 'LIQUIDITY', clue: 'Market depth', scrambled: 'YTIDIUQIL' },
+  { word: 'YIELD', clue: 'Return rate', scrambled: 'DLEIY' },
+  { word: 'APY', clue: 'Annual percentage yield', scrambled: 'YPA' },
+  { word: 'APR', clue: 'Annual percentage rate', scrambled: 'RPA' },
+  { word: 'TVL', clue: 'Total value locked', scrambled: 'LVT' },
+  { word: 'DAO', clue: 'Decentralized organization', scrambled: 'OAD' },
+  { word: 'NFT', clue: 'Non-fungible token', scrambled: 'TFN' },
+  { word: 'DAPP', clue: 'Decentralized app', scrambled: 'PPAD' },
+  { word: 'DEFI', clue: 'Decentralized finance', scrambled: 'IFED' },
+  { word: 'CEFI', clue: 'Centralized finance', scrambled: 'IFEC' },
+  { word: 'ICO', clue: 'Initial coin offering', scrambled: 'OCI' },
+  { word: 'IDO', clue: 'Initial DEX offering', scrambled: 'ODI' },
+  { word: 'IEO', clue: 'Initial exchange offering', scrambled: 'OEI' },
+  { word: 'AIRDROP', clue: 'Free token distribution', scrambled: 'PORDIAA' },
+  { word: 'WHITELIST', clue: 'Approved participants', scrambled: 'TSILETHIW' },
+  { word: 'VESTING', clue: 'Gradual token release', scrambled: 'GNITESV' },
+  { word: 'AUDIT', clue: 'Security review', scrambled: 'TIDUA' },
+  { word: 'RUG', clue: 'Exit scam', scrambled: 'GUR' },
+  { word: 'SCAM', clue: 'Fraudulent scheme', scrambled: 'MACS' },
+  { word: 'PHISHING', clue: 'Identity theft attack', scrambled: 'GNIHSIHP' },
+  { word: 'PRIVATE', clue: 'Secret key type', scrambled: 'ETAVIRP' },
+  { word: 'PUBLIC', clue: 'Shared key type', scrambled: 'CILBUP' },
+  { word: 'MAINNET', clue: 'Production network', scrambled: 'TENNIAM' },
+  { word: 'TESTNET', clue: 'Testing network', scrambled: 'TENTSET' },
+  { word: 'MEMPOOL', clue: 'Transaction waiting area', scrambled: 'LOOPEMM' },
+  { word: 'ORPHAN', clue: 'Abandoned block', scrambled: 'NAHPRO' },
+  { word: 'HALVING', clue: 'Reward reduction', scrambled: 'GNIVLAH' },
+  { word: 'GENESIS', clue: 'First block', scrambled: 'SISENEG' },
+  { word: 'FINALITY', clue: 'Transaction irreversibility', scrambled: 'YTILANIF' },
+  { word: 'THROUGHPUT', clue: 'Transaction speed', scrambled: 'TUPHGUORHT' },
+  { word: 'LATENCY', clue: 'Network delay', scrambled: 'YCNETAL' },
+  { word: 'ROLLUP', clue: 'Layer 2 solution', scrambled: 'PULLOR' },
+  { word: 'PLASMA', clue: 'Scaling framework', scrambled: 'AMSALP' },
+  { word: 'ZKEVM', clue: 'Zero-knowledge EVM', scrambled: 'MVEKZ' },
+  { word: 'OPTIMISM', clue: 'Optimistic rollup', scrambled: 'MSIMITPO' },
+  { word: 'ARBITRUM', clue: 'Layer 2 platform', scrambled: 'MURTIBRA' },
+  { word: 'POLYGON', clue: 'Ethereum sidechain', scrambled: 'NOGYOLP' },
+  { word: 'SOLANA', clue: 'Fast blockchain', scrambled: 'ANALOS' },
+  { word: 'CARDANO', clue: 'Proof of stake chain', scrambled: 'ONADRAC' },
+  { word: 'POLKADOT', clue: 'Multichain protocol', scrambled: 'TODAKLOP' },
+  { word: 'COSMOS', clue: 'Internet of blockchains', scrambled: 'SOMSOC' },
+  { word: 'AVALANCHE', clue: 'Consensus protocol', scrambled: 'EHCNALAVA' },
+  { word: 'ALGORAND', clue: 'Pure proof of stake', scrambled: 'DNAROGLA' },
+  { word: 'TEZOS', clue: 'Self-amending chain', scrambled: 'SOZET' },
+  { word: 'NEAR', clue: 'Sharded blockchain', scrambled: 'RAEN' },
+  { word: 'FLOW', clue: 'NFT blockchain', scrambled: 'WOLF' },
+  { word: 'APTOS', clue: 'Move-based chain', scrambled: 'SOTPA' },
+  { word: 'SUI', clue: 'Parallel execution chain', scrambled: 'IUS' },
+  { word: 'CELESTIA', clue: 'Modular blockchain', scrambled: 'AITSELEC' },
+  { word: 'INJECTIVE', clue: 'DeFi blockchain', scrambled: 'EVITCEJNI' },
+  { word: 'SEI', clue: 'Trading-focused chain', scrambled: 'IES' },
+  { word: 'STABLECOIN', clue: 'Pegged cryptocurrency', scrambled: 'NIOCLELBATS' },
+  { word: 'ALTCOIN', clue: 'Alternative coin', scrambled: 'NIOTCLA' },
 ];
 
 const LEVEL_2_PUZZLES: Puzzle[] = [
-  { word: 'DECENTRALIZED', clue: 'Not controlled by a single entity', scrambled: 'DEECIZTDERNAL' },
-  { word: 'CONSENSUS', clue: 'Agreement mechanism in blockchain', scrambled: 'SSUNENOSC' },
-  { word: 'VALIDATOR', clue: 'Node that validates transactions', scrambled: 'DTLAIAORV' },
-  { word: 'PROTOCOL', clue: 'Set of rules for blockchain', scrambled: 'LOOTRPOC' },
-  { word: 'STAKING', clue: 'Locking tokens for rewards', scrambled: 'GKNSAIT' },
+  { word: 'DECENTRALIZED', clue: 'Not controlled by one entity', scrambled: 'DEECIZTDERNAL' },
+  { word: 'CONSENSUS', clue: 'Agreement mechanism', scrambled: 'SSUNENOSC' },
+  { word: 'VALIDATOR', clue: 'Block validator', scrambled: 'DTLAIAORV' },
+  { word: 'PROTOCOL', clue: 'Network rules', scrambled: 'LOOTRPOC' },
+  { word: 'STAKING', clue: 'Locking tokens', scrambled: 'GKNSAIT' },
+  { word: 'BLOCKCHAIN', clue: 'Distributed ledger', scrambled: 'KCNIHCOLBA' },
+  { word: 'CRYPTOCURRENCY', clue: 'Digital currency', scrambled: 'YCCNERPURTOCRY' },
+  { word: 'TRANSACTION', clue: 'Value transfer', scrambled: 'NOITCASNATR' },
+  { word: 'DISTRIBUTED', clue: 'Spread across network', scrambled: 'DETUBIRTSID' },
+  { word: 'IMMUTABLE', clue: 'Cannot be changed', scrambled: 'ELBATUMMI' },
+  { word: 'TRANSPARENCY', clue: 'Open visibility', scrambled: 'YCNERAPSANRT' },
+  { word: 'TRUSTLESS', clue: 'No intermediary needed', scrambled: 'SSELTSURT' },
+  { word: 'PERMISSIONLESS', clue: 'No approval needed', scrambled: 'SSELNOISSIMREP' },
+  { word: 'INTEROPERABILITY', clue: 'Cross-chain compatibility', scrambled: 'YTILIBAREPORETN' },
+  { word: 'CRYPTOGRAPHY', clue: 'Encryption science', scrambled: 'YHPARGOTPYRC' },
+  { word: 'ASYMMETRIC', clue: 'Two-key encryption', scrambled: 'CIRTEMMYSA' },
+  { word: 'ELLIPTIC', clue: 'Curve cryptography', scrambled: 'CITPILLE' },
+  { word: 'SIGNATURE', clue: 'Digital authorization', scrambled: 'ERUTANGIS' },
+  { word: 'VERIFICATION', clue: 'Confirmation process', scrambled: 'NOITACIFIREV' },
+  { word: 'AUTHENTICATION', clue: 'Identity proof', scrambled: 'NOITACITNEHTUA' },
+  { word: 'MIDDLEWARE', clue: 'Connection software', scrambled: 'ERAWELDDIM' },
+  { word: 'INFRASTRUCTURE', clue: 'Foundation layer', scrambled: 'ERUTCURTSARFNI' },
+  { word: 'DECENTRALIZATION', clue: 'Power distribution', scrambled: 'NOITAZILARTNECE' },
+  { word: 'TOKENOMICS', clue: 'Token economics', scrambled: 'SCIMONEKOTN' },
+  { word: 'GOVERNANCE', clue: 'Decision-making system', scrambled: 'ECNANREVOG' },
+  { word: 'MECHANISM', clue: 'Process system', scrambled: 'MSINAHCEM' },
+  { word: 'DERIVATIVE', clue: 'Financial contract', scrambled: 'EVITAVIRED' },
+  { word: 'PERPETUAL', clue: 'Ongoing contract', scrambled: 'LAUTEPREP' },
+  { word: 'COLLATERAL', clue: 'Asset backing', scrambled: 'LARETALLOC' },
+  { word: 'LIQUIDATION', clue: 'Forced sale', scrambled: 'NOITADIUQIL' },
+  { word: 'LEVERAGE', clue: 'Borrowed trading power', scrambled: 'EGAREVEL' },
+  { word: 'VOLATILITY', clue: 'Price fluctuation', scrambled: 'YTILITALO' },
+  { word: 'ARBITRAGE', clue: 'Price difference profit', scrambled: 'EGARTIBAR' },
+  { word: 'COMPOSABILITY', clue: 'Interoperability', scrambled: 'YTILIBASOPMO' },
+  { word: 'SCALABILITY', clue: 'Growth capability', scrambled: 'YTILIBALACS' },
+  { word: 'THROUGHPUT', clue: 'Processing capacity', scrambled: 'TUPHGUORHT' },
+  { word: 'BANDWIDTH', clue: 'Data capacity', scrambled: 'HTDIWDNAB' },
+  { word: 'CONGESTION', clue: 'Network overload', scrambled: 'NOITSEGNOC' },
+  { word: 'OPTIMIZATION', clue: 'Efficiency improvement', scrambled: 'NOITAZIMITPO' },
+  { word: 'AGGREGATOR', clue: 'Data collector', scrambled: 'ROTAGERGA' },
+  { word: 'MIDDLEWARE', clue: 'Connecting layer', scrambled: 'ERAWELDDIM' },
+  { word: 'SETTLEMENT', clue: 'Final transaction', scrambled: 'TNEMELTTES' },
+  { word: 'FINALIZATION', clue: 'Completion process', scrambled: 'NOITAZILANIIF' },
+  { word: 'CONFIRMATION', clue: 'Validation step', scrambled: 'NOITAMRIFNOC' },
+  { word: 'PROPAGATION', clue: 'Network spread', scrambled: 'NOITAGAPORP' },
+  { word: 'SYNCHRONIZATION', clue: 'State alignment', scrambled: 'NOITAZINORHCNYS' },
+  { word: 'REPLICATION', clue: 'Data copying', scrambled: 'NOITACILPER' },
+  { word: 'REDUNDANCY', clue: 'Backup copies', scrambled: 'YCNADNUDER' },
+  { word: 'RESILIENCE', clue: 'Recovery ability', scrambled: 'ECNEILIISER' },
+  { word: 'AVAILABILITY', clue: 'Uptime guarantee', scrambled: 'YTILIBALIAVA' },
+  { word: 'CONSISTENCY', clue: 'Data uniformity', scrambled: 'YCNETSISNO' },
+  { word: 'PARTITION', clue: 'Network division', scrambled: 'NOITITRAP' },
+  { word: 'Byzantine', clue: 'Fault tolerance type', scrambled: 'ENITNAZBY' },
+  { word: 'ASYNCHRONOUS', clue: 'Non-blocking process', scrambled: 'SUONORHCNYSA' },
+  { word: 'DETERMINISTIC', clue: 'Predictable outcome', scrambled: 'CITSINIMRETED' },
+  { word: 'PROBABILISTIC', clue: 'Chance-based', scrambled: 'CITSILIBABORP' },
+  { word: 'INCENTIVIZE', clue: 'Reward motivation', scrambled: 'EZIVITNECNI' },
+  { word: 'DISINCENTIVE', clue: 'Penalty deterrent', scrambled: 'EVITNECNISID' },
+  { word: 'SLASHING', clue: 'Validator penalty', scrambled: 'GNIHSALS' },
+  { word: 'DELEGATION', clue: 'Power assignment', scrambled: 'NOITAGELED' },
+  { word: 'NOMINATION', clue: 'Validator selection', scrambled: 'NOITANIMON' },
+  { word: 'ROTATION', clue: 'Validator switching', scrambled: 'NOITATSOR' },
+  { word: 'CHECKPOINT', clue: 'State snapshot', scrambled: 'TNIOPHCECK' },
+  { word: 'MILESTONE', clue: 'Progress marker', scrambled: 'ENOTSELIM' },
+  { word: 'THRESHOLD', clue: 'Minimum requirement', scrambled: 'DLOHSERHT' },
+  { word: 'QUORUM', clue: 'Minimum participants', scrambled: 'MURUOQ' },
+  { word: 'SUPERMAJORITY', clue: 'Two-thirds vote', scrambled: 'YTIROJAMREPUS' },
+  { word: 'PLURALITY', clue: 'Most votes', scrambled: 'YTILARUL' },
+  { word: 'WEIGHTED', clue: 'Value-based voting', scrambled: 'DETHGIEW' },
+  { word: 'QUADRATIC', clue: 'Squared voting', scrambled: 'CITARDAUQ' },
+  { word: 'SNAPSHOT', clue: 'State capture', scrambled: 'TOHSPANS' },
+  { word: 'PROPOSAL', clue: 'Governance suggestion', scrambled: 'LASOPORP' },
+  { word: 'REFERENDUM', clue: 'Direct vote', scrambled: 'MUDNERFER' },
+  { word: 'TREASURY', clue: 'Community funds', scrambled: 'YRUSAERT' },
+  { word: 'ALLOCATION', clue: 'Resource distribution', scrambled: 'NOITACOLLA' },
+  { word: 'DISTRIBUTION', clue: 'Spread method', scrambled: 'NOITUBIRTSID' },
+  { word: 'EMISSION', clue: 'Token creation rate', scrambled: 'NOISSIME' },
+  { word: 'INFLATION', clue: 'Supply increase', scrambled: 'NOITALFNI' },
+  { word: 'DEFLATION', clue: 'Supply decrease', scrambled: 'NOITALFED' },
+  { word: 'CIRCULATION', clue: 'Active supply', scrambled: 'NOITALUCRIC' },
+  { word: 'MARKETCAP', clue: 'Total value', scrambled: 'PACTEKRAM' },
+  { word: 'DOMINANCE', clue: 'Market share', scrambled: 'ECNANIMOD' },
+  { word: 'CORRELATION', clue: 'Price relationship', scrambled: 'NOITALRROC' },
+  { word: 'DIVERGENCE', clue: 'Price separation', scrambled: 'ECNEGREVID' },
+  { word: 'CONVERGENCE', clue: 'Price alignment', scrambled: 'ECNEGREVNOC' },
+  { word: 'RESISTANCE', clue: 'Price ceiling', scrambled: 'ECNATSISER' },
+  { word: 'SUPPORT', clue: 'Price floor', scrambled: 'TROPPUS' },
+  { word: 'BREAKOUT', clue: 'Price breakthrough', scrambled: 'TUOKAERB' },
+  { word: 'REVERSAL', clue: 'Trend change', scrambled: 'LASREVER' },
+  { word: 'MOMENTUM', clue: 'Price strength', scrambled: 'MUTNEMOM' },
+  { word: 'INDICATOR', clue: 'Analysis tool', scrambled: 'ROTACIDNI' },
+  { word: 'OSCILLATOR', clue: 'Range indicator', scrambled: 'ROTALLIOCS' },
+  { word: 'CANDLESTICK', clue: 'Price chart type', scrambled: 'KCITSELDNAC' },
+  { word: 'FIBONACCI', clue: 'Retracement levels', scrambled: 'ICCANOBI' },
+  { word: 'BOLLINGER', clue: 'Volatility bands', scrambled: 'REGNILLOB' },
+  { word: 'MACD', clue: 'Moving average indicator', scrambled: 'DCAM' },
+  { word: 'RSI', clue: 'Relative strength', scrambled: 'ISR' },
+  { word: 'MULTICHAIN', clue: 'Multiple blockchain support', scrambled: 'NIAHCITLUM' },
+  { word: 'INTERCHAIN', clue: 'Between blockchains', scrambled: 'NIAHCRETNI' },
 ];
 
 export function GamePlay({ level, onBack }: GamePlayProps) {
@@ -43,6 +230,7 @@ export function GamePlay({ level, onBack }: GamePlayProps) {
   const [bonusMultiplier, setBonusMultiplier] = useState<number>(1.0);
   const [rewards, setRewards] = useState<any>(null);
   const [fid, setFid] = useState<number | null>(null);
+  const [timeLeft, setTimeLeft] = useState<number>(10);
 
   const { address } = useAccount();
   const { writeContract, data: hash, isPending } = useWriteContract();
@@ -69,6 +257,7 @@ export function GamePlay({ level, onBack }: GamePlayProps) {
       // Start game after payment confirmed
       loadNewPuzzle();
       setGameState('playing');
+      setTimeLeft(10); // Reset timer
 
       // Track play stat
       if (address) {
@@ -80,6 +269,20 @@ export function GamePlay({ level, onBack }: GamePlayProps) {
       }
     }
   }, [playTxSuccess, gameState, address, level]);
+
+  // Timer countdown
+  useEffect(() => {
+    if (gameState === 'playing' && timeLeft > 0) {
+      const timer = setTimeout(() => {
+        setTimeLeft(timeLeft - 1);
+      }, 1000);
+
+      return () => clearTimeout(timer);
+    } else if (gameState === 'playing' && timeLeft === 0) {
+      // Time's up - auto submit as lost
+      setGameState('lost');
+    }
+  }, [gameState, timeLeft]);
 
   const loadNewPuzzle = () => {
     const puzzles = level === 1 ? LEVEL_1_PUZZLES : LEVEL_2_PUZZLES;
@@ -148,6 +351,7 @@ export function GamePlay({ level, onBack }: GamePlayProps) {
     setSignature(null);
     setShowReward(false);
     setPuzzle(null);
+    setTimeLeft(10);
   };
 
   const handleShareWin = async () => {
@@ -214,6 +418,17 @@ export function GamePlay({ level, onBack }: GamePlayProps) {
 
       {gameState === 'playing' && puzzle && (
         <div className="space-y-6">
+          {/* Timer */}
+          <div className="flex justify-center">
+            <div className={`px-6 py-3 rounded-full font-bold text-2xl ${
+              timeLeft <= 3 ? 'bg-red-500 text-white animate-pulse' :
+              timeLeft <= 5 ? 'bg-yellow-500 text-white' :
+              'bg-green-500 text-white'
+            }`}>
+              ⏱️ {timeLeft}s
+            </div>
+          </div>
+
           <div className="bg-brand-tan bg-opacity-20 p-6 rounded-lg border-2 border-brand-tan">
             <p className="text-sm text-brand-brown font-medium mb-2">Clue:</p>
             <p className="text-xl font-bold text-gray-800">{puzzle.clue}</p>
@@ -296,16 +511,16 @@ export function GamePlay({ level, onBack }: GamePlayProps) {
       {gameState === 'lost' && (
         <div className="text-center py-8">
           <div className="w-24 h-24 mx-auto bg-red-500 rounded-full flex items-center justify-center mb-4">
-            <span className="text-5xl">😞</span>
+            <span className="text-5xl">{timeLeft === 0 ? '⏱️' : '😞'}</span>
           </div>
           <h3 className="text-2xl font-bold text-red-600 mb-2">
-            Wrong Answer!
+            {timeLeft === 0 ? 'Time\'s Up!' : 'Wrong Answer!'}
           </h3>
           <p className="text-gray-600 mb-2">
             The correct answer was: <strong>{puzzle?.word}</strong>
           </p>
           <p className="text-sm text-gray-500 mb-6">
-            Better luck next time!
+            {timeLeft === 0 ? 'You ran out of time!' : 'Better luck next time!'}
           </p>
           <button onClick={handlePlayAgain} className="btn-secondary">
             Try Again
