@@ -47,8 +47,24 @@ export default function Home() {
     <main className="min-h-screen">
       {/* Header */}
       <header className="bg-white shadow-md border-b-4 border-brand-orange">
-        <div className="max-w-7xl mx-auto px-4 py-6">
-          <div className="flex justify-between items-center mb-4">
+        <div className="max-w-7xl mx-auto px-4 py-4 md:py-6">
+          {/* Mobile Layout */}
+          <div className="flex md:hidden flex-col gap-3">
+            <div className="text-center">
+              <h1 className="text-2xl font-bold text-brand-orange">
+                Word Puzzle Game
+              </h1>
+              <p className="text-xs text-gray-600 mt-1">
+                NFT-Gated Puzzle Challenge
+              </p>
+            </div>
+            <div className="flex justify-center">
+              <ConnectButton />
+            </div>
+          </div>
+
+          {/* Desktop Layout */}
+          <div className="hidden md:flex justify-between items-center mb-4">
             <div className="flex-1 text-center">
               <h1 className="text-3xl font-bold text-brand-orange">
                 Word Puzzle Game
@@ -57,26 +73,26 @@ export default function Home() {
                 NFT-Gated Puzzle Challenge
               </p>
             </div>
-            <div className="absolute right-4">
+            <div>
               <ConnectButton />
             </div>
           </div>
 
           {/* Navigation Links */}
-          <div className="flex gap-4 pt-4 border-t">
+          <div className="flex flex-wrap gap-3 md:gap-4 pt-4 border-t mt-4">
             <button
               onClick={() => router.push('/talent')}
-              className="text-sm font-medium text-gray-600 hover:text-brand-orange transition-colors flex items-center gap-1"
+              className="text-xs md:text-sm font-medium text-gray-600 hover:text-brand-orange transition-colors flex items-center gap-1"
             >
               <span>🎯</span>
-              <span>My Talent Profile</span>
+              <span className="whitespace-nowrap">My Talent Profile</span>
             </button>
             <button
               onClick={() => router.push('/leaderboard')}
-              className="text-sm font-medium text-gray-600 hover:text-brand-orange transition-colors flex items-center gap-1"
+              className="text-xs md:text-sm font-medium text-gray-600 hover:text-brand-orange transition-colors flex items-center gap-1"
             >
               <span>🏆</span>
-              <span>Leaderboard</span>
+              <span className="whitespace-nowrap">Leaderboard</span>
             </button>
           </div>
         </div>
