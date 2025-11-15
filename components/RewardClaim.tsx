@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { useWriteContract, useWaitForTransactionReceipt, useSwitchChain, useAccount } from 'wagmi';
 import { base, celo } from 'wagmi/chains';
 import { BASE_VAULT_CONTRACT_ADDRESS, CELO_VAULT_CONTRACT_ADDRESS, VAULT_ABI } from '@/lib/contracts';
+import sdk from '@farcaster/miniapp-sdk';
 
 interface RewardClaimProps {
   signature: {
@@ -193,8 +194,21 @@ export function RewardClaim({ signature, onClose, onShare }: RewardClaimProps) {
           </div>
 
           <button
-            onClick={onShare}
+            onClick={async () => {
+              try {
+                await sdk.actions.addMiniApp();
+              } catch (error) {
+                console.error('Error adding mini app:', error);
+              }
+            }}
             className="btn-primary w-full mb-3"
+          >
+            📌 Add Game to Mini Apps
+          </button>
+
+          <button
+            onClick={onShare}
+            className="btn-secondary w-full mb-3"
           >
             Share Your Win on Farcaster 🎉
           </button>
