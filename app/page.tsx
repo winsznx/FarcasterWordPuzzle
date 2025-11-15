@@ -5,6 +5,7 @@ import { useAccount } from 'wagmi';
 import { useRouter } from 'next/navigation';
 import { ConnectButton } from '@/components/ConnectButton';
 import { GameDashboard } from '@/components/GameDashboard';
+import sdk from '@farcaster/miniapp-sdk';
 
 export default function Home() {
   const { isConnected } = useAccount();
@@ -14,6 +15,14 @@ export default function Home() {
   useEffect(() => {
     setMounted(true);
   }, []);
+
+  const handleAddMiniApp = async () => {
+    try {
+      await sdk.actions.addMiniApp();
+    } catch (error) {
+      console.error('Error adding mini app:', error);
+    }
+  };
 
   if (!mounted) {
     return (
@@ -39,7 +48,13 @@ export default function Home() {
                 NFT-Gated Puzzle Challenge
               </p>
             </div>
-            <div className="absolute right-4">
+            <div className="absolute right-4 flex gap-2 items-center">
+              <button
+                onClick={handleAddMiniApp}
+                className="px-3 py-2 bg-purple-600 hover:bg-purple-700 text-white font-medium rounded-lg text-sm transition-colors"
+              >
+                📌 Add to Farcaster
+              </button>
               <ConnectButton />
             </div>
           </div>
