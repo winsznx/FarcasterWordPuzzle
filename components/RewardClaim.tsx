@@ -35,6 +35,15 @@ export function RewardClaim({ signature, onClose, onShare }: RewardClaimProps) {
     hash,
   });
 
+  // Auto-advance to next step when claim succeeds
+  useEffect(() => {
+    if (isSuccess && claimStep === 'base') {
+      setClaimStep('celo');
+    } else if (isSuccess && claimStep === 'celo') {
+      setClaimStep('complete');
+    }
+  }, [isSuccess, claimStep]);
+
   // Track claim when transaction succeeds
   useEffect(() => {
     if (isSuccess && claimStep === 'complete' && address) {
@@ -87,13 +96,6 @@ export function RewardClaim({ signature, onClose, onShare }: RewardClaimProps) {
       handleClaimCelo();
     }
   };
-
-  // Auto-advance to next step when claim succeeds
-  if (isSuccess && claimStep === 'base') {
-    setClaimStep('celo');
-  } else if (isSuccess && claimStep === 'celo') {
-    setClaimStep('complete');
-  }
 
   return (
     <div className="card max-w-2xl mx-auto">
