@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useWriteContract, useWaitForTransactionReceipt, useSwitchChain, useAccount } from 'wagmi';
 import { base, celo } from 'wagmi/chains';
 import { BASE_VAULT_CONTRACT_ADDRESS, CELO_VAULT_CONTRACT_ADDRESS, VAULT_ABI } from '@/lib/contracts';
@@ -29,20 +29,25 @@ export function RewardClaim({ signature, onClose, onShare }: RewardClaimProps) {
   const [claimStep, setClaimStep] = useState<'base' | 'celo' | 'complete'>('base');
   const { address } = useAccount();
   const { switchChain } = useSwitchChain();
+  const processedHash = useRef<string | null>(null);
 
   const { writeContract, data: hash, isPending } = useWriteContract();
   const { isLoading: isConfirming, isSuccess } = useWaitForTransactionReceipt({
     hash,
   });
 
-  // Auto-advance to next step when claim succeeds
+  // Auto-advance to next step when claim succeeds (only once per transaction)
   useEffect(() => {
-    if (isSuccess && claimStep === 'base') {
-      setClaimStep('celo');
-    } else if (isSuccess && claimStep === 'celo') {
-      setClaimStep('complete');
+    if (isSuccess && hash && hash !== processedHash.current) {
+      processedHash.current = hash;
+
+      if (claimStep === 'base') {
+        setClaimStep('celo');
+      } else if (claimStep === 'celo') {
+        setClaimStep('complete');
+      }
     }
-  }, [isSuccess, claimStep]);
+  }, [isSuccess, hash, claimStep]);
 
   // Track claim when transaction succeeds
   useEffect(() => {
