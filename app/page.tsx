@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { useAccount } from 'wagmi';
 import { useRouter } from 'next/navigation';
 import { ConnectButton } from '@/components/ConnectButton';
@@ -11,18 +11,27 @@ export default function Home() {
   const { isConnected } = useAccount();
   const [mounted, setMounted] = useState(false);
   const router = useRouter();
+  const addPromptShown = useRef(false);
 
   useEffect(() => {
     setMounted(true);
   }, []);
 
-  const handleAddMiniApp = async () => {
-    try {
-      await sdk.actions.addMiniApp();
-    } catch (error) {
-      console.error('Error adding mini app:', error);
-    }
-  };
+  // Automatically prompt to add mini app when user first connects wallet
+  useEffect(() => {
+    const promptAddMiniApp = async () => {
+      if (isConnected && !addPromptShown.current) {
+        addPromptShown.current = true;
+        try {
+          await sdk.actions.addMiniApp();
+        } catch (error) {
+          console.error('Error adding mini app:', error);
+        }
+      }
+    };
+
+    promptAddMiniApp();
+  }, [isConnected]);
 
   if (!mounted) {
     return (
@@ -48,13 +57,7 @@ export default function Home() {
                 NFT-Gated Puzzle Challenge
               </p>
             </div>
-            <div className="absolute right-4 flex gap-2 items-center">
-              <button
-                onClick={handleAddMiniApp}
-                className="px-3 py-2 bg-purple-600 hover:bg-purple-700 text-white font-medium rounded-lg text-sm transition-colors"
-              >
-                📌 Add to Farcaster
-              </button>
+            <div className="absolute right-4">
               <ConnectButton />
             </div>
           </div>
