@@ -13,6 +13,7 @@
     "buttonTitle": "Play Puzzle",
     "splashImageUrl": "https://farcaster-word-puzzle.vercel.app/icon.png",
     "splashBackgroundColor": "#f5f5dc",
+    "webhookUrl": "https://farcaster-word-puzzle.vercel.app/api/webhook",
     "subtitle": "NFT-gated word puzzles with crypto rewards",
     "description": "Solve word puzzles and earn crypto rewards on Base and Celo. Talent Protocol bonus up to 2x!",
     "primaryCategory": "games",
