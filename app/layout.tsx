@@ -2,28 +2,35 @@ import './globals.css';
 import type { Metadata } from 'next';
 import { Providers } from './providers';
 
+const APP_URL = process.env.NEXT_PUBLIC_APP_URL || 'https://farcaster-word-puzzle.vercel.app';
+
 export const metadata: Metadata = {
   title: 'Word Puzzle - Farcaster Mini App',
   description: 'NFT-gated word puzzle game with multi-chain crypto rewards on Base and Celo. Solve crypto-themed word puzzles and earn tokens!',
   applicationName: 'Word Puzzle',
+  openGraph: {
+    title: 'Word Puzzle Game',
+    description: 'Solve puzzles, earn crypto rewards on Base and Celo!',
+    images: [`${APP_URL}/icon.png`],
+  },
   other: {
     'fc:miniapp': JSON.stringify({
       version: '1',
-      name: 'Word Puzzle',
-      imageUrl: `${process.env.NEXT_PUBLIC_APP_URL}/og-image.png`,
+      imageUrl: `${APP_URL}/icon.png`,
       button: {
         title: 'Play Game',
         action: {
-          type: 'launch_frame',
+          type: 'launch_miniapp',
           name: 'Word Puzzle',
-          url: process.env.NEXT_PUBLIC_APP_URL,
-          splashImageUrl: `${process.env.NEXT_PUBLIC_APP_URL}/icon.png`,
-          splashBackgroundColor: '#f5f5dc',
+          url: APP_URL,
+          splashImageUrl: `${APP_URL}/icon.png`,
+          splashBackgroundColor: '#e35336',
         },
       },
     }),
   },
 };
+
 
 export default function RootLayout({
   children,
