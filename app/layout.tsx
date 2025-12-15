@@ -28,6 +28,21 @@ export const metadata: Metadata = {
         },
       },
     }),
+    // For backward compatibility
+    'fc:frame': JSON.stringify({
+      version: '1',
+      imageUrl: `${APP_URL}/icon.png`,
+      button: {
+        title: 'Play Game',
+        action: {
+          type: 'launch_frame',
+          name: 'Word Puzzle',
+          url: APP_URL,
+          splashImageUrl: `${APP_URL}/icon.png`,
+          splashBackgroundColor: '#e35336',
+        },
+      },
+    }),
   },
 };
 
