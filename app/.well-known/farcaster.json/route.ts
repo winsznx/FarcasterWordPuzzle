@@ -1,12 +1,11 @@
 import { minikitConfig } from '@/minikit.config';
 
 export async function GET() {
-    // Return the manifest with frame key (standard format)
+    // Return the manifest with miniapp key (per latest spec)
     const manifest = {
         accountAssociation: minikitConfig.accountAssociation,
-        frame: minikitConfig.miniapp,
+        miniapp: minikitConfig.miniapp,
     };
 
     return Response.json(manifest);
 }
-
