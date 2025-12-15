@@ -8,11 +8,9 @@ const ROOT_URL = 'https://farcaster-word-puzzle.vercel.app';
 
 export const minikitConfig = {
     accountAssociation: {
-        // IMPORTANT: Replace these with your signed values from:
-        // https://farcaster.xyz/~/developers/mini-apps/manifest?domain=farcaster-word-puzzle.vercel.app
-        header: "PLACEHOLDER_REPLACE_WITH_SIGNED_HEADER",
-        payload: "PLACEHOLDER_REPLACE_WITH_SIGNED_PAYLOAD",
-        signature: "PLACEHOLDER_REPLACE_WITH_SIGNED_SIGNATURE"
+        header: "eyJmaWQiOjEzNzEyNTQsInR5cGUiOiJjdXN0b2R5Iiwia2V5IjoiMHg4NzQ5ZDk0MDMzN2M4MzhmMGU0MDQ2NDMzY0QxNjdhMzVmNzUzYmQwIn0",
+        payload: "eyJkb21haW4iOiJmYXJjYXN0ZXItd29yZC1wdXp6bGUudmVyY2VsLmFwcCJ9",
+        signature: "WyyHHFEKVsXP5L0A0h8d7BPn/gPtcnFcaDAJp5FtVdInt3KMADTJA2St2+GbMufVBIFEG1gE0IuXWBxjiYeRLBw="
     },
     miniapp: {
         version: "1",
