@@ -5,7 +5,7 @@ import { useAccount } from 'wagmi';
 import { useRouter } from 'next/navigation';
 import { ConnectButton } from '@/components/ConnectButton';
 import { GameDashboard } from '@/components/GameDashboard';
-import sdk from '@farcaster/miniapp-sdk';
+import { sdk } from '@farcaster/miniapp-sdk';
 
 export default function Home() {
   const { isConnected } = useAccount();

@@ -20,7 +20,7 @@ export const metadata: Metadata = {
       button: {
         title: 'Play Game',
         action: {
-          type: 'launch_miniapp',
+          type: 'launch_frame',
           name: 'Word Puzzle',
           url: APP_URL,
           splashImageUrl: `${APP_URL}/icon.png`,
