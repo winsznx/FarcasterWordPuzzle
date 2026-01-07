@@ -1,13 +1,30 @@
-import { minikitConfig } from '@/minikit.config';
+import { minikitConfig } from '../../../minikit.config';
 
 export async function GET() {
-    // Use 'miniapp' key as per official Farcaster spec
-    // Also include 'frame' for backward compatibility
+    // Match working base-wrapped pattern
     const manifest = {
         accountAssociation: minikitConfig.accountAssociation,
-        miniapp: minikitConfig.miniapp,
-        // Backward compatibility
-        frame: minikitConfig.miniapp,
+        frame: {
+            version: "1",
+            name: minikitConfig.miniapp.name,
+            iconUrl: minikitConfig.miniapp.iconUrl,
+            homeUrl: minikitConfig.miniapp.homeUrl,
+            imageUrl: minikitConfig.miniapp.imageUrl,
+            buttonTitle: minikitConfig.miniapp.buttonTitle,
+            splashImageUrl: minikitConfig.miniapp.splashImageUrl,
+            splashBackgroundColor: minikitConfig.miniapp.splashBackgroundColor,
+            webhookUrl: minikitConfig.miniapp.webhookUrl,
+            subtitle: minikitConfig.miniapp.subtitle,
+            description: minikitConfig.miniapp.description,
+            screenshotUrls: minikitConfig.miniapp.screenshotUrls,
+            primaryCategory: minikitConfig.miniapp.primaryCategory,
+            tags: minikitConfig.miniapp.tags,
+            heroImageUrl: minikitConfig.miniapp.heroImageUrl,
+            tagline: minikitConfig.miniapp.tagline,
+            ogTitle: minikitConfig.miniapp.ogTitle,
+            ogDescription: minikitConfig.miniapp.ogDescription,
+            ogImageUrl: minikitConfig.miniapp.ogImageUrl,
+        },
     };
 
     return Response.json(manifest);

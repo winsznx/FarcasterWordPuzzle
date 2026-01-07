@@ -32,17 +32,6 @@ export const minikitConfig = {
         ogTitle: "Word Puzzle Game",
         ogDescription: "Solve crypto-themed word puzzles and earn tokens on Base and Celo!",
         ogImageUrl: `${ROOT_URL}/og-image.png`,
-        // Required chains for multi-chain support
-        requiredChains: [
-            "eip155:8453",   // Base Mainnet
-            "eip155:42220"   // Celo Mainnet
-        ],
-        // Required capabilities for wallet interactions
-        requiredCapabilities: [
-            "wallet.getEthereumProvider",
-            "wallet.signTypedDataV4",
-            "actions.addMiniApp"
-        ]
     },
 } as const;
 
