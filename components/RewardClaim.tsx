@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from 'react';
 import { useWriteContract, useWaitForTransactionReceipt, useSwitchChain, useAccount } from 'wagmi';
 import { base, celo } from 'wagmi/chains';
 import { BASE_VAULT_CONTRACT_ADDRESS, CELO_VAULT_CONTRACT_ADDRESS, VAULT_ABI } from '@/lib/contracts';
-import sdk from '@farcaster/miniapp-sdk';
+import { sdk } from '@farcaster/miniapp-sdk';
 
 interface RewardClaimProps {
   signature: {
@@ -118,16 +118,14 @@ export function RewardClaim({ signature, onClose, onShare }: RewardClaimProps) {
 
       {/* Progress Steps */}
       <div className="flex justify-center gap-2 mb-6">
-        <div className={`px-4 py-2 rounded-lg font-medium ${
-          claimStep === 'base' ? 'bg-blue-500 text-white' :
-          (claimStep === 'celo' || claimStep === 'complete') ? 'bg-green-500 text-white' : 'bg-gray-200'
-        }`}>
+        <div className={`px-4 py-2 rounded-lg font-medium ${claimStep === 'base' ? 'bg-blue-500 text-white' :
+            (claimStep === 'celo' || claimStep === 'complete') ? 'bg-green-500 text-white' : 'bg-gray-200'
+          }`}>
           1. Base Network
         </div>
-        <div className={`px-4 py-2 rounded-lg font-medium ${
-          claimStep === 'celo' ? 'bg-blue-500 text-white' :
-          claimStep === 'complete' ? 'bg-green-500 text-white' : 'bg-gray-200'
-        }`}>
+        <div className={`px-4 py-2 rounded-lg font-medium ${claimStep === 'celo' ? 'bg-blue-500 text-white' :
+            claimStep === 'complete' ? 'bg-green-500 text-white' : 'bg-gray-200'
+          }`}>
           2. Celo Network
         </div>
       </div>
@@ -180,8 +178,8 @@ export function RewardClaim({ signature, onClose, onShare }: RewardClaimProps) {
             className="btn-primary w-full mb-4 disabled:opacity-50"
           >
             {isPending || isConfirming ? 'Claiming...' :
-             claimStep === 'base' ? 'Claim Base Rewards (Step 1)' :
-             'Claim Celo Rewards (Step 2)'}
+              claimStep === 'base' ? 'Claim Base Rewards (Step 1)' :
+                'Claim Celo Rewards (Step 2)'}
           </button>
           <p className="text-xs text-gray-500 text-center">
             {claimStep === 'base' ?

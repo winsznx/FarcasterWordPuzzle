@@ -2,7 +2,7 @@
 
 import { useAppKit } from '@reown/appkit/react';
 import { useAccount, useDisconnect } from 'wagmi';
-import sdk from '@farcaster/miniapp-sdk';
+import { sdk } from '@farcaster/miniapp-sdk';
 import { useEffect, useState } from 'react';
 
 export function ConnectButton() {

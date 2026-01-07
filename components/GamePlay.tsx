@@ -5,7 +5,7 @@ import { useWriteContract, useWaitForTransactionReceipt, useAccount } from 'wagm
 import { parseEther } from 'viem';
 import { GAME_CONTRACT_ADDRESS, GAME_ABI } from '@/lib/contracts';
 import { RewardClaim } from './RewardClaim';
-import sdk from '@farcaster/miniapp-sdk';
+import { sdk } from '@farcaster/miniapp-sdk';
 
 interface GamePlayProps {
   level: 1 | 2;
@@ -420,11 +420,10 @@ export function GamePlay({ level, onBack }: GamePlayProps) {
         <div className="space-y-6">
           {/* Timer */}
           <div className="flex justify-center">
-            <div className={`px-6 py-3 rounded-full font-bold text-2xl ${
-              timeLeft <= 3 ? 'bg-red-500 text-white animate-pulse' :
-              timeLeft <= 5 ? 'bg-yellow-500 text-white' :
-              'bg-green-500 text-white'
-            }`}>
+            <div className={`px-6 py-3 rounded-full font-bold text-2xl ${timeLeft <= 3 ? 'bg-red-500 text-white animate-pulse' :
+                timeLeft <= 5 ? 'bg-yellow-500 text-white' :
+                  'bg-green-500 text-white'
+              }`}>
               ⏱️ {timeLeft}s
             </div>
           </div>
