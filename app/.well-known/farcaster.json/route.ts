@@ -1,9 +1,12 @@
 import { minikitConfig } from '@/minikit.config';
 
 export async function GET() {
-    // Use 'frame' key to match working base-wrapped pattern
+    // Use 'miniapp' key as per official Farcaster spec
+    // Also include 'frame' for backward compatibility
     const manifest = {
         accountAssociation: minikitConfig.accountAssociation,
+        miniapp: minikitConfig.miniapp,
+        // Backward compatibility
         frame: minikitConfig.miniapp,
     };
 
