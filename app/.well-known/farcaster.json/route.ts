@@ -1,11 +1,12 @@
 import { minikitConfig } from '../../../minikit.config';
 
 export async function GET() {
-    // Match working base-wrapped pattern
+    // Official Farcaster Mini App spec
+    // See: https://miniapps.farcaster.xyz/docs/guides/publishing
     const manifest = {
         accountAssociation: minikitConfig.accountAssociation,
-        frame: {
-            version: "1",
+        miniapp: {
+            version: minikitConfig.miniapp.version,
             name: minikitConfig.miniapp.name,
             iconUrl: minikitConfig.miniapp.iconUrl,
             homeUrl: minikitConfig.miniapp.homeUrl,
@@ -13,17 +14,6 @@ export async function GET() {
             buttonTitle: minikitConfig.miniapp.buttonTitle,
             splashImageUrl: minikitConfig.miniapp.splashImageUrl,
             splashBackgroundColor: minikitConfig.miniapp.splashBackgroundColor,
-            webhookUrl: minikitConfig.miniapp.webhookUrl,
-            subtitle: minikitConfig.miniapp.subtitle,
-            description: minikitConfig.miniapp.description,
-            screenshotUrls: minikitConfig.miniapp.screenshotUrls,
-            primaryCategory: minikitConfig.miniapp.primaryCategory,
-            tags: minikitConfig.miniapp.tags,
-            heroImageUrl: minikitConfig.miniapp.heroImageUrl,
-            tagline: minikitConfig.miniapp.tagline,
-            ogTitle: minikitConfig.miniapp.ogTitle,
-            ogDescription: minikitConfig.miniapp.ogDescription,
-            ogImageUrl: minikitConfig.miniapp.ogImageUrl,
         },
     };
 
