@@ -6,11 +6,13 @@ import { parseEther } from 'viem';
 import { GAME_CONTRACT_ADDRESS, GAME_ABI } from '@/lib/contracts';
 import { RewardClaim } from './RewardClaim';
 import { sdk } from '@farcaster/miniapp-sdk';
+import { Timer, PartyPopper, Flame, Frown, Clock } from 'lucide-react';
 
 interface GamePlayProps {
   level: 1 | 2;
   onBack: () => void;
 }
+
 
 interface Puzzle {
   word: string;
@@ -421,10 +423,10 @@ export function GamePlay({ level, onBack }: GamePlayProps) {
           {/* Timer */}
           <div className="flex justify-center">
             <div className={`px-6 py-3 rounded-full font-bold text-2xl ${timeLeft <= 3 ? 'bg-red-500 text-white animate-pulse' :
-                timeLeft <= 5 ? 'bg-yellow-500 text-white' :
-                  'bg-green-500 text-white'
+              timeLeft <= 5 ? 'bg-yellow-500 text-white' :
+                'bg-green-500 text-white'
               }`}>
-              ⏱️ {timeLeft}s
+              <Timer className="w-6 h-6" /> {timeLeft}s
             </div>
           </div>
 
@@ -474,7 +476,7 @@ export function GamePlay({ level, onBack }: GamePlayProps) {
       {gameState === 'won' && (
         <div className="text-center py-8">
           <div className="w-24 h-24 mx-auto bg-green-500 rounded-full flex items-center justify-center mb-4">
-            <span className="text-5xl">🎉</span>
+            <PartyPopper className="w-12 h-12 text-white" />
           </div>
           <h3 className="text-2xl font-bold text-green-600 mb-2">
             Congratulations!
@@ -485,9 +487,12 @@ export function GamePlay({ level, onBack }: GamePlayProps) {
 
           {bonusMultiplier > 1.0 && rewards && (
             <div className="bg-gradient-to-r from-yellow-50 to-orange-50 rounded-lg p-4 mb-4 max-w-md mx-auto">
-              <p className="text-sm font-semibold text-orange-700 mb-2">
-                🔥 Talent Bonus: {bonusMultiplier}x
-              </p>
+              <div className="flex items-center justify-center gap-1 mb-2 text-orange-700">
+                <Flame className="w-4 h-4" />
+                <p className="text-sm font-semibold">
+                  Talent Bonus: {bonusMultiplier}x
+                </p>
+              </div>
               <div className="grid grid-cols-2 gap-2 text-xs">
                 <div className="bg-white rounded px-2 py-1">
                   <span className="font-bold text-blue-600">{rewards.puzz}</span> PUZZ
@@ -510,7 +515,11 @@ export function GamePlay({ level, onBack }: GamePlayProps) {
       {gameState === 'lost' && (
         <div className="text-center py-8">
           <div className="w-24 h-24 mx-auto bg-red-500 rounded-full flex items-center justify-center mb-4">
-            <span className="text-5xl">{timeLeft === 0 ? '⏱️' : '😞'}</span>
+            {timeLeft === 0 ? (
+              <Timer className="w-12 h-12 text-white" />
+            ) : (
+              <Frown className="w-12 h-12 text-white" />
+            )}
           </div>
           <h3 className="text-2xl font-bold text-red-600 mb-2">
             {timeLeft === 0 ? 'Time\'s Up!' : 'Wrong Answer!'}
