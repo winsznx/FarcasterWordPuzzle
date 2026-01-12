@@ -1,0 +1,18 @@
+{
+    "accountAssociation": {
+        "header": "eyJmaWQiOjEzNzEyNTQsInR5cGUiOiJjdXN0b2R5Iiwia2V5IjoiMHg4NzQ5ZDk0MDMzN2M4MzhmMGU0MDQ2NDMzY0QxNjdhMzVmNzUzYmQwIn0",
+        "payload": "eyJkb21haW4iOiJmYXJjYXN0ZXItd29yZC1wdXp6bGUudmVyY2VsLmFwcCJ9",
+        "signature": "WyyHHFEKVsXP5L0A0h8d7BPn/gPtcnFcaDAJp5FtVdInt3KMADTJA2St2+GbMufVBIFEG1gE0IuXWBxjiYeRLBw="
+    },
+    "frame": {
+        "version": "1",
+        "name": "Word Puzzle",
+        "iconUrl": "https://farcaster-word-puzzle.vercel.app/icon.png",
+        "homeUrl": "https://farcaster-word-puzzle.vercel.app",
+        "imageUrl": "https://farcaster-word-puzzle.vercel.app/og-image.png",
+        "buttonTitle": "Play Game",
+        "splashImageUrl": "https://farcaster-word-puzzle.vercel.app/splash.png",
+        "splashBackgroundColor": "#e35336",
+        "webhookUrl": "https://farcaster-word-puzzle.vercel.app/api/webhook"
+    }
+}
