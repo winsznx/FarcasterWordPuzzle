@@ -6,6 +6,7 @@ import { useRouter } from 'next/navigation';
 import { ConnectButton } from '@/components/ConnectButton';
 import { GameDashboard } from '@/components/GameDashboard';
 import { sdk } from '@farcaster/miniapp-sdk';
+import { Target, Trophy, Sparkles } from 'lucide-react';
 
 export default function Home() {
   const { isConnected } = useAccount();
@@ -15,6 +16,8 @@ export default function Home() {
 
   useEffect(() => {
     setMounted(true);
+    // Notify Farcaster that the frame is ready
+    sdk.actions.ready();
   }, []);
 
   // Automatically prompt to add mini app when user first connects wallet
@@ -84,14 +87,14 @@ export default function Home() {
               onClick={() => router.push('/talent')}
               className="text-xs md:text-sm font-medium text-gray-600 hover:text-brand-orange transition-colors flex items-center gap-1"
             >
-              <span>🎯</span>
+              <Target className="w-4 h-4" />
               <span className="whitespace-nowrap">My Talent Profile</span>
             </button>
             <button
               onClick={() => router.push('/leaderboard')}
               className="text-xs md:text-sm font-medium text-gray-600 hover:text-brand-orange transition-colors flex items-center gap-1"
             >
-              <span>🏆</span>
+              <Trophy className="w-4 h-4" />
               <span className="whitespace-nowrap">Leaderboard</span>
             </button>
           </div>
@@ -141,7 +144,7 @@ export default function Home() {
                 </div>
                 <div className="flex items-start gap-3">
                   <div className="w-8 h-8 rounded-full bg-yellow-500 text-white flex items-center justify-center flex-shrink-0">
-                    ✨
+                    <Sparkles className="w-4 h-4" />
                   </div>
                   <div>
                     <h3 className="font-bold text-lg">Talent Bonus</h3>
