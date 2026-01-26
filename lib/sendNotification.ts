@@ -135,7 +135,7 @@ async function sendNotification(
 //
 // Send to a single user:
 // await sendNotificationToUser(12345, {
-//   notificationId: 'new-puzzle-2024-01-15',
+//   notificationId: 'new-puzzle-2026-01-15',
 //   title: 'New Puzzle Available!',
 //   body: 'A new Level 2 puzzle is ready to solve!',
 //   targetUrl: 'https://farcaster-word-puzzle.vercel.app',
@@ -143,7 +143,7 @@ async function sendNotification(
 //
 // Send to multiple users:
 // await sendNotificationToMultipleUsers([12345, 67890], {
-//   notificationId: 'daily-challenge-2024-01-15',
+//   notificationId: 'daily-challenge-2026-01-15',
 //   title: 'Daily Challenge',
 //   body: 'Complete today\'s puzzle for bonus rewards!',
 //   targetUrl: 'https://farcaster-word-puzzle.vercel.app',
